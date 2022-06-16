@@ -16,7 +16,7 @@ export function UserList() {
   return (
     <div className="container">
       <div className="row">
-        <h1>Redux CRUD User app</h1>
+        <h1>CRUD app - Redux , Toolkit</h1>
       </div>
       <div className="row">
         {/* <div className="two columns">
