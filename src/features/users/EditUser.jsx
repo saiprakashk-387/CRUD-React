@@ -4,7 +4,7 @@ import { useHistory, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { userUpdated } from "./usersSlice";
 
-export function EditUser() {
+function EditUser() {
   const { pathname } = useLocation();
   const userId = parseInt(pathname.replace("/edit-user/", ""));
 
@@ -73,3 +73,4 @@ export function EditUser() {
     </div>
   );
 }
+export default EditUser;

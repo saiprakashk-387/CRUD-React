@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { Link } from "react-router-dom";
 
-export function UserList() {
+ function UserList() {
   const dispatch = useDispatch();
 
   const { entities } = useSelector((state) => state.users);
@@ -68,3 +68,4 @@ export function UserList() {
     </div>
   );
 }
+export default UserList;

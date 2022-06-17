@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import { userAdded } from "./usersSlice";
 
-export function AddUser() {
+ function AddUser() {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -71,3 +71,4 @@ export function AddUser() {
     </div>
   );
 }
+export default AddUser;
