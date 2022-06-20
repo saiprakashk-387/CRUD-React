@@ -15,8 +15,8 @@ function EditUser() {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const [name, setName] = useState(user.name);
-  const [email, setEmail] = useState(user.email);
+  const [name, setName] = useState(user?.name );
+  const [email, setEmail] = useState(user?.email);
   const [error, setError] = useState(null);
 
   const handleName = (e) => setName(e.target.value);
@@ -27,7 +27,7 @@ function EditUser() {
       dispatch(
         userUpdated({
           id: userId,
-          name,
+          // name,
           email,
         })
       );
@@ -47,14 +47,14 @@ function EditUser() {
       <div className="row">
         <div className="three columns">
           <label htmlFor="nameInput">Name</label>
-          <input
+          {/* <input
             className="u-full-width"
             type="text"
             placeholder="test@mailbox.com"
             id="nameInput"
             onChange={handleName}
             value={name}
-          />
+          /> */}
           <label htmlFor="emailInput">Email</label>
           <input
             className="u-full-width"
