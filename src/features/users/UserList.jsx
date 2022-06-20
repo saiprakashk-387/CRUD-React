@@ -1,6 +1,6 @@
 import { fetchUsers, userDeleted } from "./usersSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { list } from "../../Data";
+// import { list } from "../../Data";
 import { Link } from "react-router-dom";
 import moment from "moment";
 
@@ -13,11 +13,13 @@ function UserList() {
   const handleDelete = (id) => {
     dispatch(userDeleted({ id }));
   };
-  let sortedCars1 = list.sort(
-    (a, b) =>
-      new Date(...a.date.split("/").reverse()) -
-      new Date(...b.date.split("/").reverse())
-  );
+
+  //if date parameter exists in api data .....enable this function to sort  and replace entities with list//
+  // let sortedCars1 = list.sort(
+  //   (a, b) =>
+  //     new Date(...a.date.split("/").reverse()) -
+  //     new Date(...b.date.split("/").reverse())
+  // );
   return (
     <div className="container">
       <div className="row">
@@ -38,18 +40,20 @@ function UserList() {
             <thead>
               <tr>
                 <th>ID</th>
+                <th>Name</th>
                 <th>Email</th>
                 <th>Date</th>
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody>
-              {sortedCars1.length &&
-                sortedCars1?.map(({ id, name, email, date }, i) => (
+              {entities.length &&
+                entities?.map(({ id, name, email, date }, i) => (
                   <tr key={i}>
                     <td>{id}</td>
+                    <td>{name}</td>
                     <td>{email}</td>
-                    <td>{moment(date).format("L")}</td>
+                    {/* <td>{moment(date).format("L")}</td> */}
                     <td>
                       <button onClick={() => handleDelete(id)}>Delete</button>
                       <Link to={`/edit-user/${id}`}>
